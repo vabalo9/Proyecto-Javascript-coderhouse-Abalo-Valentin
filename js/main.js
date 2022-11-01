@@ -5,7 +5,7 @@ alert("Bienvenido a Rebomba lencería e indumentaría")
 do {
  valor = prompt("Ingresa la palabra boxers, para saber el precio de los boxers. La palabra conjuntos para saber el precio de los conjuntos. palabra remeras, para saber el precio de las remeras o la palabra medias para saber el precio de las medias. Si desea salir por favor escriba la palabra salir ").toLowerCase()
  console.log(valor) 
-  if (valor.toLowerCase() == "boxer") {
+  if (valor.toLowerCase() == "boxers") {
     alert ("EL precio de los boxer es de $1500")
       let confirmacion= prompt("Desea comprar boxers? ingrese 1 si desea comprar o 2 si no desea comprar")
       if (confirmacion == "1") {
@@ -46,6 +46,9 @@ do {
         alert("En total serían " + cantidad + " Remeras por un precio de $" + total)
         
       }
+  }
+  else if (valor == "salir") {
+
   }
   else {
     alert("Lo sentimos el producto que ingreso no se encuentra dentro de nuestro stock en este momento")
