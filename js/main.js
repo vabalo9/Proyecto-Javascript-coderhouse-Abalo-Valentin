@@ -15,7 +15,7 @@ alert("Bienvenido a Rebomba lencería e indumentaría")
  
     
 do {
-    valor = prompt(("Ingrese el tipo de articulo que desea comprar:\nboxers\nconjuntos\ncamisetas\nmedias\n Para terminar  ingrese la palabra salir ").toLowerCase())
+    valor = prompt("Ingrese el tipo de articulo que desea comprar:\nboxers\nconjuntos\ncamisetas\nmedias\n Para terminar  ingrese la palabra salir ").toLowerCase()
      if (valor == "boxers" || valor == "medias" || valor == "camisetas" || valor == "conjuntos" ) {
         let respuesta = productos.filter(producto => producto.articulo === valor)
 
@@ -23,9 +23,8 @@ do {
        for (const producto of respuesta) { 
         salida = salida + producto.modelo + "\n Precio: $ " + producto.precio + "\npara comprarlo a continuación presione " + producto.id + "\n\n"
        }
-       alert("Articulos encontrados:\n" + salida)
+       let articuloFinal = parseFloat(prompt("Articulos encontrados:\n" + salida))
        
-       let articuloFinal = parseFloat(prompt("Ingrese el número del producto que desea comprar"))
        let compra = productos.find(producto => producto.id === articuloFinal)
        let final= ""
        
@@ -33,6 +32,7 @@ do {
        
        alert(final)
        alert("Gracias por su compra")
+       valor = "salir"
       
         
      }
