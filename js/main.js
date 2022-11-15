@@ -48,6 +48,7 @@ do {
         
      }
      else if (valor == "salir") {
+      alert("Gracias por su visita")
    
      }
      else {
