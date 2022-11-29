@@ -1,14 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Re bomba-boxers</title>
+    <meta name="description" content="Nuestros modelos de boxers">
+    <meta name="keywords" content="lenceria, indumentaria, ropa interior, boxers, medias, ofertas, hombre, algodon, doufour, moda">
+    <link rel="icon" a href="Logo CHICO Re bomba.png">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/new.css">
 </head>
-<body>
-    
 
+<body>
+
+    <header class="encabezado">
+        <nav class="navbar navbar-expand-lg p-0">
+            <div class="d-flex justify-content-between ps-2 pe-2 container-fluid">
+                <a class="navbar-brand" href="./index.html"><img class="logo" src="./Logo CHICO Re bomba.png">
+                </a>
+                <form class="formpc" role="search">
+                    <input class="form-control me-2" id="input" type="search" placeholder="Buscar..." aria-label="search">
+                    <button class="btn btn-outline-success botonBuscador" type="submit">Buscar</button>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categorias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./conjuntos.html">Conjuntos</a></li>
+                            <li><a class="dropdown-item" href="./boxers.html">Boxers</a></li>
+                            <li><a class="dropdown-item" href="./medias.html">Medias</a></li>
+                            <li><a class="dropdown-item" href="./remeras.html">Remeras</a></li>
+                        </ul>
+                    </li>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item d-flex flexdirection-row">
+                            <a class="nav-link active" aria-current="page" href="./inicio_sesion.html"><img class="ingresar" src="./iconos/notificaciones.png" alt="" srcset=""></a>
+                            <a class="nav-link" href="#"><img src="./iconos/carrito.png" id="modal-carrito" alt="" class="carrito"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <form class="formcelu" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="search">
+            <button class="btn btn-outline-success botonEncontrador" type="submit">Buscar</button>
+        </form>
+    </header>
+
+
+  <div id="contenedorProductos"></div>
+
+        
+        <div class="modal-derecha" id="modal-derecha">
+            <div id="carrito"> </div>
+            <div class="botones-modal">
+                <button id="comprar" class="boton-modal">Finalizar comprar</button>
+                
+                <button class="boton-modal" id="cerrar-modal-derecha">cerrar</button>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!--pie de pagina-->
+    <footer>
+        <!--informacion sobre la empresa-->
+        <main class="pie-pagina">
+
+            <nav class="about">
+
+                <div class="info">
+
+                    <div class="info1">
+                        <span class="pie-pagina__item pie-pagina__item-verde"><a href="./nosotoros.html"> Quienes somos </a> </span>
+                        <span class="pie-pagina__item pie-pagina__item-azul"><a href="./politicas.html">Politicas de privacidad</a> </span>
+                        <span class="pie-pagina__item pie-pagina__item-rojo"><a href="./terminos.html">Terminos y condiciones</a> </span>
+                        <span class="pie-pagina__item pie-pagina__item-amarillo"><a href="https://autogestion.produccion.gob.ar/consumidores" target="_blank">Defensa al consunidor</a> </span>
+                    </div>
+
+                    <div class="info1">
+                        <span class="pie-pagina__item"><a href="./preguntas-frecuentes.html">Preguntas frecuentes</a> </span>
+                        <span class="pie-pagina__item"><a href="">Pagos y promociones</a> </span>
+                        <span class="pie-pagina__item"><a href="">Entregas</a> </th>
+                        <span class="pie-pagina__item"><a href="">Cambios</a> </span>
+                    </div>
+
+                </div>
+
+
+                <div class="atencion">
+                    <div class="numero">
+                        <h2 class="contacto">Centro de atencion al cliente:</h2>
+                        <h2 class="contacto">0810-222-333</h2>
+                        <a href="https://www.instagram.com/rebomba_/" target="_blank"><img class="instagram" src="./iconos/6293712d3e40f0cd1c5df47f.png" alt="instagram"  srcset=""></a>
+                    </div>
+                </div>
+            </nav>
+            <div class="fondo">
+                <div>
+                    <img class="chico" src="./Logo CHICO Re bomba.png">
+                </div>
+                <p class="copyright">© Copyright - 2020 - 2022 www.rebomba.com.ar, TODOS LOS DERECHOS RESERVADOS. Las fotos
+                    contenidas
+                    en este site, el logotipo y las marcas son propiedad de Rebomba.com.ar y/o de sus respectivos titulares.
+                    Está prohibida la reproducción total o parcial, sin la expresa autorización de la administradora de la
+                    tienda
+                    virtual. Re bomba, empresa perteneciente al grupo Re Bomba S.A. con domicilio en Brown 2021 Mar del
+                    Plata de la
+                    Provincia de Buenos Aires 
+                </p>
+            </div>
+
+            <a href="#"><img class="flecha" src="./iconos/flecha.png" alt="flecha"></a>
+            <img class="wpp" src="./iconos/580b57fcd9996e24bc43c543.png" alt="whats app">
+
+        </main>
+    </footer>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>

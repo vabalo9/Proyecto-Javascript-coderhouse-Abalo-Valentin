@@ -1,0 +1,58 @@
+/*encabezado*/
+
+.encabezado {
+        background-color: darksalmon;
+        .logo {
+            width: 190px;
+            border-radius: 20px;
+        }
+
+        .formpc {
+            display: flex;
+            .botonBuscador {
+                border-color: gray;
+                color: beige;
+            }
+            .botonBuscador:hover,
+            .botonBuscador:focus {
+            background-color: gray;
+            border-color: gray;
+            box-shadow: none;
+            }
+            }
+
+            .navbar-collapse {
+                flex-grow: 0;
+            }
+
+        .dropdown {
+            list-style-type:none;
+        }
+
+        .ingresar {
+            width: 40px;
+        }
+
+        .carrito {
+            width: 50px;
+        }
+
+        .formcelu {
+            display: none;
+            .botonEncontrador {
+                border-color: gray;
+                color: beige;
+            
+            .botonEncontrador:hover,
+            .botonEncontrador:focus {
+            background-color: gray;
+            border-color: gray;
+            box-shadow: none;
+            }
+            }
+        }
+
+       
+
+}
+

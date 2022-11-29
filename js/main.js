@@ -1,62 +1,133 @@
-alert("Bienvenido a Rebomba lencería e indumentaría")
-  let valor = ""
+let productos = [
+    
+    {  id: 1, articulo: "boxers", nombre:"BOXER DUFOUR ALGODON RAYADO SIN COSTURA - ART. 11881", precio: 1600, imgUrl: "../boxers/BOXER-ALGODON-RAYADO-SIN-COSTURA-ART.11881.jpg" },
+    {  id: 2, articulo: "boxers", nombre:"BOXER DUFOUR ALGODON BATIK SIN COSTURA - ART. 11831", precio: 1600, imgUrl: "../boxers/BOXER-ALGODON-RAYADO-SIN-COSTURA-ART.11881.jpg" },
+    {  id: 3, articulo: "boxers", nombre:"BOXER DUFOUR MELANGE COLOR SIN COSTURA - ART. 11788", precio: 1550, imgUrl: "../boxers/BOXER-ALGODON-RAYADO-SIN-COSTURA-ART.11881.jpg" },
+    {  id: 4, articulo: "boxers", nombre:"BOXER DUFOUR RUNNING MICROFIBRA - ART. 11794", precio: 1600, imgUrl: "../boxers/BOXER-ALGODON-RAYADO-SIN-COSTURA-ART.11881.jpg" },
+    {  id: 5, articulo: "boxers", nombre:"BOXER DUFOUR SELVATICO SIN COSTURA - ART. 11830", precio: 1855, imgUrl: "../boxers/BOXER-ALGODON-RAYADO-SIN-COSTURA-ART.11881.jpg" },
+    {  id: 6, articulo: "boxers", nombre:"BOXER DUFOUR SIN COSTURA RAYADO - ART. 11812", precio: 1700, imgUrl: "../boxers/BOXER-ALGODON-RAYADO-SIN-COSTURA-ART.11881.jpg" },
+    
+    ]
+  
+  let btnComprar = document.getElementById("comprar")
+  btnComprar.onclick = () => {
+    localStorage.clear()
+    
+    carrito.innerHTML = `
+    <h4 class="carrito-vacio"> No hay ningún producto en el carrito</h4>
+    `
+
+    alert("Su compra fue procesada con exito! Muchas gracias")
+    
+  }
   
 
-  let productos = [
-    {  id: 1, articulo: "conjuntos", modelo:"Conjunto  Andressa 1218", precio: 1600 },
-    {  id: 2, articulo: "conjuntos", modelo:"Conjunto  Andressa 1221", precio: 1100 },
-    {  id: 3, articulo: "boxers", modelo:"BOXER DUFOUR ALGODON RAYADO SIN COSTURA - ART. 11881", precio: 1600 },
-    {  id: 4, articulo: "boxers", modelo:"BOXER DUFOUR ALGODON BATIK SIN COSTURA - ART. 11831", precio: 1900 },
-    {  id: 5, articulo: "medias", modelo:"MEDIA CORTA LISA ALGODON- ART. 3327", precio: 900 },
-    {  id: 6, articulo: "medias", modelo:"MEDIA 3/4 CON LYCRA ELEGANCE - ART. 2098", precio: 1150 },
-    {  id: 7, articulo: "camisetas", modelo:"CAMISETA FRISADA ULTRA-TERMICA - ART. 11795", precio: 850 },
-    {  id: 8, articulo: "camisetas", modelo:"CAMISETA PIJAMA - ART. 11797", precio: 2000 },
-    ]
-    
-    function filter(lista, comparador){
-      let respuesta = lista.filter(producto => producto.articulo === comparador)
-      return respuesta
-    }
-    function find(lista, comparador){
-      let compra = lista.find(producto => producto.id === comparador)
-      let final= ""
-      final = "Usded compro el articulo " + compra.modelo + "\n Por un total de: $ " + compra.precio 
-      return final
-    }
-    function despedida(mensaje){
-      alert(mensaje)
-       alert("Gracias por su compra")
-       valor = "salir"
-    }
+  let contenedorProductos = document.getElementById("contenedorProductos")
+  let carrito = document.getElementById("carrito")
+  let arrayCarrito = []
+  
 
-    function menu() {
-    
-do {
-    valor = prompt("Ingrese el tipo de articulo que desea comprar:\nboxers\nconjuntos\ncamisetas\nmedias\n Para terminar  ingrese la palabra salir ").toLowerCase()
-     if (valor == "boxers" || valor == "medias" || valor == "camisetas" || valor == "conjuntos" ) {
-        
-        
-        let salida = ""
-       for (const producto of filter(productos,valor)) { 
-        salida = salida + producto.modelo + "\n Precio: $ " + producto.precio + "\npara comprarlo a continuación presione " + producto.id + "\n\n"
-       }
-       let articuloFinal = parseFloat(prompt("Articulos encontrados:\n" + salida))
-       
-       
-       despedida(find(productos ,articuloFinal));
-      
-        
-     }
-     else if (valor == "salir") {
-      alert("Gracias por su visita")
-   
-     }
-     else {
-       alert("Lo sentimos el producto que ingreso no se encuentra dentro de nuestro stock en este momento")
-     }
-   
-   
-   } while (valor != "salir")
+  if (localStorage.getItem("carrito")) {
+    arrayCarrito = JSON.parse(localStorage.getItem("carrito"))
   }
+  
 
-  menu();
+ 
+  renderizarCarrito()
+  renderizarProductos(productos)
+  
+  function renderizarProductos(arrayProductos) {
+    contenedorProductos.innerHTML = ''
+    for (const producto of arrayProductos) {
+      let tarjetaProducto = document.createElement("div")
+  
+    
+  
+      tarjetaProducto.innerHTML = `
+      <div class="articulo_hijo">
+         <img class="articulo_imagen" src="./shop/boxers/BOXER ALGODON RAYADO SIN COSTURA - ART. 11881.jpg"/>
+        <h4 class="articulo_titulo">${producto.nombre}</h4>
+        <h5 class="articulo_titulo precio">$${producto.precio}</h5>
+        <button class="articulo_boton" id=${producto.id}>Agregar al carrito</button>
+        </div>
+      `
+      // <img src= ${producto.imgUrl} class="articulo_imagen">
+      
+  
+      contenedorProductos.append(tarjetaProducto)
+    }
+  
+    let botones = document.getElementsByClassName("articulo_boton")
+    for (const boton of botones) {
+      boton.addEventListener("click", agregarAlCarrito)
+
+      boton.addEventListener("click", ()=>{
+        modalDerecha.classList.add("active");
+      })
+    }
+  }
+  
+  let input = document.getElementById("input")
+  input.addEventListener("input", fnInput)
+  
+  function fnInput(event) {
+    console.log(event)
+    let productosFiltrados = productos.filter(producto => producto.nombre.includes(input.value.toUpperCase()))
+    renderizarProductos(productosFiltrados)
+  }
+  
+  function agregarAlCarrito(e) {
+    let productoBuscado = productos.find(producto => producto.id == e.target.id)
+    let posicionProducto = arrayCarrito.findIndex(producto => producto.id == e.target.id)
+  
+    if (posicionProducto != -1) {
+      arrayCarrito[posicionProducto] = {
+        id: arrayCarrito[posicionProducto].id, nombre: arrayCarrito[posicionProducto].nombre, precio: arrayCarrito[posicionProducto].precio, unidades: arrayCarrito[posicionProducto].unidades + 1, subtotal: arrayCarrito[posicionProducto].precio * (arrayCarrito[posicionProducto].unidades + 1)
+      }
+    } else {
+      arrayCarrito.push({
+        id: productoBuscado.id, nombre: productoBuscado.nombre, precio: productoBuscado.precio, unidades: 1, subtotal: productoBuscado.precio
+      })
+    }
+  
+    let carritoJSON = JSON.stringify(arrayCarrito)
+    localStorage.setItem("carrito", carritoJSON)
+  
+    renderizarCarrito()
+  }
+  
+  
+  function renderizarCarrito() {
+
+    
+    carrito.innerHTML = ""
+    for (const itemCarrito of arrayCarrito) {
+      carrito.innerHTML += `
+      <div class="itemCarrito">
+      <div class="elemento">
+        <h4>${itemCarrito.nombre}</h4>
+        <h4>Unidades: ${itemCarrito.unidades}</h4>
+        <h4>valor: $${itemCarrito.precio}</h4>
+        <h4>Subtotal: $${itemCarrito.subtotal}</h4>
+        </div>
+      </div>
+      `
+    }
+  }
+   const btnModalDerecha = document.getElementById("modal-carrito")
+  const modalDerecha = document.getElementById("modal-derecha")
+  const cerrarModalDerecha = document.getElementById("cerrar-modal-derecha")
+
+  btnModalDerecha.addEventListener("click", ()=>{
+    modalDerecha.classList.add("active");
+  })
+
+ 
+
+  cerrarModalDerecha.addEventListener("click", ()=>{
+    modalDerecha.classList.remove("active");
+  })
+
+  
+  
+  

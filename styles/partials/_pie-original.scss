@@ -1,0 +1,112 @@
+
+/*simbolo whast app y flecha*/
+.wpp {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    width: 60px;
+}
+
+.flecha {
+    position: absolute;
+    bottom: 140px;
+    right: 40px;
+    width: 40px;
+}
+
+/* Pie de pagina*/
+.pie-pagina {
+    background-color: darksalmon;
+    color: beige;
+    padding-block: 0px;
+    position: relative;
+    padding-top: 0%;
+    margin-top: 0%;
+    width: 100%;
+    z-index: 0;
+
+
+    .about {
+        padding-top: 20px;
+        display: flex;
+        padding-inline: 45px;
+        justify-content: space-between;
+        align-items: center;
+        
+
+        .info {
+            display: flex;
+        
+
+            .info1 {
+                display: flex;
+                flex-direction: column;
+                .pie-pagina__item {
+                    padding-inline:  20px;
+                    padding-block: 10px;
+                    font-size: 15   px;
+                }
+                .pie-pagina__item a {
+                    text-decoration: none;
+                    color: beige;
+                }
+            
+                .pie-pagina__item a:hover {
+                    text-decoration: underline;
+                }
+
+                
+            }
+        }
+        
+
+
+        .atencion {
+            text-decoration: none; 
+            position: relative;
+            bottom: 5px;
+            right: 6px;
+            display: flex;
+            align-items: flex-start;
+
+            .numero {
+                .contacto {
+                    font-size: 30px;
+                }
+                .instagram {
+                        width: 50px;
+                }
+                
+
+            }
+        }
+
+        
+
+
+    }
+    .fondo {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 30px;
+        margin-inline: 80px;
+        padding-bottom: 20px;
+        gap: 15px;
+
+        .chico {
+            border-radius: 15px;
+            width: 150px;
+        
+        }
+        .copyright {
+        color: black;
+        font-size: 14px;
+        
+        }
+    }
+}
+
+
+
+

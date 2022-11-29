@@ -1,0 +1,155 @@
+/*boxers, medias, conjuntos*/
+
+
+
+.boxer_shop {
+
+    padding-inline: 120px;
+    margin-block: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grande {
+    display: flex;
+    gap:5%;
+}
+
+/*articulos*/
+
+.articulo {
+    transition: all .2s;
+    -webkit-animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both
+}
+
+.articulo_hijo {
+   margin-block: 30px;
+   padding:10px;
+   border-radius: 10px;
+   width: 100%;
+ }
+
+@for $articulo from 1 through 6 {
+    .articulo_#{$articulo} {
+        animation-delay: $articulo*0.1s;
+    }
+}
+// .articulo_hijo:hover {
+//     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+//     transform: scale(1.05);
+// }
+
+
+.articulo_imagen {
+    max-width: 100%;
+    border-radius: 10px;
+
+}
+
+.articulo_titulo {
+    padding-top: 10px;
+    padding-inline: 20px;
+    color: white;
+    font-size: 15px;
+   
+}
+
+.articulo_parrafo {
+    color: white;   
+    font-size: 14px;
+}
+
+.articulo_boton {
+    background-color: darkslategrey;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    
+
+}
+
+.articulo_boton:hover {
+    background-color: darksalmon;
+}
+
+
+
+.precio {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.modal-derecha {
+    position: fixed;
+    right: 0;
+    width: 40%;
+    ;
+    top: 0;
+    bottom: 0;
+    background-color: darksalmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: .3s;
+    box-shadow: 0 0 0 500vmax rgba(0, 0 ,0, .8);
+    z-index: 3;
+    overflow: scroll;
+}
+
+.modal-derecha.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.elemento {
+    background-color: darkgray;
+    margin: 40px;
+    padding: 30px;
+}
+
+.elemento, h4 {
+    color: white;
+}
+
+.botones-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-inline: 70px;
+    border: 0%;
+}
+.boton-modal { 
+    background-color: darkgray;
+    color: white;
+    width: 80%;
+    border: darkgray;
+    border-radius: 10%;
+
+}
+
+#contenedorProductos {
+    display: flex;
+    margin: 20px;
+    padding: 30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrito-vacio {
+    color: white;
+    font-size: 60px;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+    
