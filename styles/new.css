@@ -1,21 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@600;700&family=Fira+Sans:wght@300&display=swap");
-.caja {
-  text-decoration: none;
-  color: white;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 60px;
-}
-
-.cuenta, .grid-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -76,85 +59,6 @@ p {
   background-color: gray;
   border-color: gray;
   box-shadow: none;
-}
-
-/*portada*/
-.contenedor {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-}
-
-.caja {
-  height: 100vh;
-}
-
-.caja1 {
-  background-image: url("../banners/conjuntos.jpeg");
-}
-
-.caja2 {
-  background-image: url("../banners/boxers.jpeg");
-}
-
-.caja3 {
-  background-image: url("../banners/pijamas.jpg");
-}
-
-.caja4 {
-  background-image: url("../banners/medias.jpg");
-}
-
-a .enlace {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.683);
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  color: white;
-}
-
-a:hover .enlace {
-  display: flex;
-}
-
-/*medios de pago*/
-.pagos {
-  margin-block: 40px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.pagos img {
-  height: 60px;
-}
-
-/*imagenes de marcas*/
-.grid-item {
-  margin-block: 1px;
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-container {
-  margin-top: 50px;
-  display: grid;
-  margin-inline: 50px;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  grid-auto-rows: minmax(200px, auto);
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.grid-item img {
-  max-width: 100%;
-}
-
-/*Catalogos*/
-.catalogo {
-  width: 100%;
 }
 
 /*boxers, medias, conjuntos*/
@@ -249,17 +153,13 @@ a:hover .enlace {
   margin-bottom: 20px;
 }
 
-.modal-derecha {
+.contenedor-modal {
   position: fixed;
   right: 0;
   width: 40%;
   top: 0;
   bottom: 0;
   background-color: darksalmon;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-block: 30px;
   visibility: hidden;
   opacity: 0;
   transform: translateX(100%);
@@ -267,9 +167,13 @@ a:hover .enlace {
   box-shadow: 0 0 0 500vmax rgba(0, 0, 0, 0.8);
   z-index: 3;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-block: 30px;
 }
 
-.modal-derecha.active {
+.disabled {
   transform: translateX(0);
   opacity: 1;
   visibility: visible;
@@ -316,106 +220,6 @@ a:hover .enlace {
   align-items: center;
   justify-content: center;
   padding: 30px;
-}
-
-.cuenta {
-  margin-block: 40px;
-}
-
-.cuenta h1 {
-  font-size: 50px;
-  color: white;
-}
-
-.hace {
-  text-decoration: none;
-  color: white;
-  text-decoration: none;
-  box-shadow: none;
-}
-
-.hace:hover {
-  text-decoration: none;
-  color: black;
-}
-
-.ingreso {
-  background-color: darksalmon;
-  border-color: darksalmon;
-}
-
-.ingreso:hover {
-  text-decoration: none;
-  background-color: darksalmon;
-  border-color: darksalmon;
-  box-shadow: none;
-  color: black;
-}
-
-.titular {
-  margin-inline: 50px;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  color: beige;
-}
-
-.content {
-  margin-bottom: 50px;
-  margin-inline: 200px;
-  color: white;
-  font-size: 20px;
-}
-.content .parrafos {
-  margin-block: 20px;
-}
-
-.title {
-  margin-top: 40px;
-}
-
-.preguntas {
-  color: white;
-  margin-left: 50px;
-  padding-bottom: 20px;
-}
-
-.acordeon {
-  margin-inline: 150px;
-  margin-bottom: 30px;
-}
-
-.barrilete {
-  background-color: darkgray;
-  color: white;
-  font-size: 20px;
-}
-
-.barrilete:not(.collapsed) {
-  background-color: darkgray;
-  color: white;
-}
-
-.barrilete:focus {
-  border: 0;
-  box-shadow: none !important;
-}
-
-.accordion-button::after {
-  color: white;
-}
-
-.texto {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.envio {
-  padding-top: 40px;
-}
-
-.demora {
-  padding-bottom: 30px;
 }
 
 /*simbolo whast app y flecha*/

@@ -81,18 +81,13 @@
     margin-bottom: 20px;
 }
 
-.modal-derecha {
+.contenedor-modal {
     position: fixed;
     right: 0;
     width: 40%;
-    ;
     top: 0;
     bottom: 0;
     background-color: darksalmon;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-block: 30px;
     visibility: hidden;
     opacity: 0;
     transform: translateX(100%);
@@ -100,9 +95,23 @@
     box-shadow: 0 0 0 500vmax rgba(0, 0 ,0, .8);
     z-index: 3;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 30px;
 }
 
-.modal-derecha.active {
+.contenido-modal {
+    
+}
+
+// .contenedor-modal.active {
+//     transform: translateX(0);
+//     opacity: 1;
+//     visibility: visible;
+// }
+
+.disabled {
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
@@ -134,7 +143,7 @@
     border-radius: 10%;
 
 }
-
+//estas son las tarjetitas que se renderizan
 #contenedorProductos {
     display: flex;
     margin: 20px;
