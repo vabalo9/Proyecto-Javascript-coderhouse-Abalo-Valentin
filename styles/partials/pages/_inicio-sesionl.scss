@@ -1,0 +1,38 @@
+.cuenta {
+    margin-block: 40px;
+    @extend %center;
+    
+}
+
+.cuenta h1 {
+   font-size: 50px;
+   color: white; 
+}
+
+.hace {
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+    box-shadow:none;
+    
+}
+
+.hace:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.ingreso {
+    background-color: darksalmon;
+    border-color: darksalmon;
+    
+}
+
+.ingreso:hover {
+    text-decoration: none;
+    background-color: darksalmon;
+    border-color: darksalmon;
+    box-shadow: none;
+    color: black;
+    
+}

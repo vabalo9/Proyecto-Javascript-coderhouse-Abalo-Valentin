@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Re bomba-boxers</title>
-    <meta name="description" content="Nuestros modelos de boxers">
-    <meta name="keywords" content="lenceria, indumentaria, ropa interior, boxers, medias, ofertas, hombre, algodon, doufour, moda">
-    <link rel="icon" a href="Logo CHICO Re bomba.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Hace tu cuenta</title>
+    <link rel="icon" href="Logo CHICO Re bomba.png">
+    <meta name="keywords" content="lenceria, indumentaria, ropa interior, boxers, conjuntos, bombachas, medias, ofertas,hombre, mujer moda">
+    <meta name="description" content="Se parte de nuestra comunidad">
     <link rel="stylesheet" href="./styles/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/new.css">
 </head>
@@ -22,7 +21,7 @@
                 <a class="navbar-brand" href="./index.html"><img class="logo" src="./Logo CHICO Re bomba.png">
                 </a>
                 <form class="formpc" role="search">
-                    <input class="form-control me-2" id="input" type="search" placeholder="Buscar..." aria-label="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="search">
                     <button class="btn btn-outline-success botonBuscador" type="submit">Buscar</button>
                 </form>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -37,17 +36,17 @@
                             Categorias
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-item boton-categoria" id="todos"> Todos los productos</li>
-                            <li class="dropdown-item boton-categoria" id="Conjuntos"> Conjuntos</li>
-                            <li class="dropdown-item boton-categoria" id="Boxers"> Boxers</li>
-                            <li class="dropdown-item boton-categoria" id="Medias"> Medias</li>
-                            <li class="dropdown-item boton-categoria" id="Remeras"> Remeras</li>
+                            <li><a class="dropdown-item" href="./conjuntos.html">Conjuntos</a></li>
+                            <li><a class="dropdown-item" href="./boxers.html">Boxers</a></li>
+                            <li><a class="dropdown-item" href="./medias.html">Medias</a></li>
+                            <li><a class="dropdown-item" href="./remeras.html">Remeras</a></li>
+                        
                         </ul>
                     </li>
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item d-flex flexdirection-row">
                             <a class="nav-link active" aria-current="page" href="./inicio_sesion.html"><img class="ingresar" src="./iconos/notificaciones.png" alt="" srcset=""></a>
-                            <a class="nav-link" href="#"><img src="./iconos/carrito.png" id="modal-carrito" alt="" class="carrito"></a>
+                            <a class="nav-link" href="#"><img src="./iconos/carrito.png" alt="" class="carrito"></a>
                         </li>
                     </ul>
                 </div>
@@ -58,28 +57,76 @@
             <button class="btn btn-outline-success botonEncontrador" type="submit">Buscar</button>
         </form>
     </header>
-    <h1 class="titulo-principal" id="titulo-principal">Todos nuestros productos</h1>
-    <main>
-        <!--cuerpo-->
-        <article id="contenedor-productos" class="boxer_shop"> </article>
-    </main>
     
-    <div class="modal-derecha" id="modal-derecha">
-        <div id="carrito"> </div>
-        <div>
-            <div id="reduce" class="totales">
-            </div>
-            <div class="botones-modal" id="btn-comprar-visible">
-                <button id="comprar" class="boton-modal">Finalizar compra</button>
-
-                <button class="boton-modal" id="cerrar-modal-derecha">cerrar</button>
-            </div>
-        </div>
-    </div>
-
-    
-    <!-- <footer>
+    <form class="d-flex flex-column mb-4">
+        <h4 class="d-flex justify-content-center mt-5 fs-1 text-white "><b>Crea tu cuenta</b></h4>
         
+
+            <div class="formulario d-flex row justify-content-evenly">
+            
+                <div class="col-md-3">
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                            <input type="text" required class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+                            <input type="text" required class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="my-3 col_one_third col_last">
+                            <label for="nacimiento">Fecha de nacimiento</label>
+                            <input type="date" required id="nacimiento"  name="nacimiento"  class="sm-form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Nro de DNI</label>
+                            <input type="number" required class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3 col_one_third c-azul col_last ">
+                            <label for="genero">genero:</label>
+                            <select name="selectgenero" id="genero" class="dropdown-trigger btn " ="">
+                            <option value="0">Seleccione</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option> 
+                           </select>
+                        </div><div class="mb-">
+                            <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                </div>
+
+            
+                <div class="col-md-3">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Confirmar Email</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Confirmar contraseña</label>
+                            <input type="password" class="form-control" id="exampleFormControlInput1">
+                        </div>
+
+                </div>
+            </div>
+        
+        <div class="d-flex justify-content-center">
+            <button type="submit" value="submit" class="btn btn-primary btn-lg ingreso">Crear mi cuenta</button>
+                       
+        </div>
+    
+    
+
+    </form>
+    <footer>
+        <!--informacion sobre la empresa-->
         <main class="pie-pagina">
 
             <nav class="about">
@@ -130,10 +177,7 @@
             <img class="wpp" src="./iconos/580b57fcd9996e24bc43c543.png" alt="whats app">
 
         </main>
-    </footer> -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </footer>
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/main.js"></script>
 </body>
 
-</html>
