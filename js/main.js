@@ -1,35 +1,6 @@
-let productos = [
-    
-    {  id: 1, articulo: "Boxers", nombre:"BOXER DUFOUR ALGODON RAYADO SIN COSTURA - ART. 11881", precio: 1600, imagen: "./shop/boxers/BOXER ALGODON RAYADO SIN COSTURA - ART. 11881.jpg" },
-    {  id: 2, articulo: "Boxers", nombre:"BOXER DUFOUR ALGODON BATIK SIN COSTURA - ART. 11831", precio: 1600, imagen: "./shop//boxers/BOXER ESTRELLAS SIN COSTURA - ART. 11789.jpg" },
-    {  id: 3, articulo: "Boxers", nombre:"BOXER DUFOUR MELANGE COLOR SIN COSTURA - ART. 11788", precio: 1550, imagen: "./shop/boxers/BOXER MELANGE COLOR SIN COSTURA - ART. 11788.jpg" },
-    {  id: 4, articulo: "Boxers", nombre:"BOXER DUFOUR RUNNING MICROFIBRA - ART. 11794", precio: 1600, imagen: "./shop/boxers/BOXER RUNNING MICROFIBRA - ART. 11794.jpg" },
-    {  id: 5, articulo: "Boxers", nombre:"BOXER DUFOUR SELVATICO SIN COSTURA - ART. 11830", precio: 1855, imagen: "./shop/boxers/BOXER SELVATICO SIN COSTURA - ART. 11830.jpg" },
-    {  id: 6, articulo: "Boxers", nombre:"BOXER DUFOUR SIN COSTURA RAYADO - ART. 11812", precio: 1700, imagen: "./shop/boxers/BOXER SIN COSTURA RAYADO - ART. 11812.jpg" },
-    
-    {  id: 7,  articulo: "Medias", nombre:"CORTA LISA ALGODON- ART. 3327", precio: 900, imagen: "./shop/medias/CORTA LISA - ART. 3327.jpg" },
-    {  id: 8,  articulo: "Medias", nombre:"MEDIA 3/4 CON LYCRA ELEGANCE - ART. 2098", precio: 1600, imagen: "./shop/medias/MEDIA 34 CON LYCRA ELEGANCE - ART. 2098.jpg" },
-    {  id: 9,  articulo: "Medias", nombre:"QUARTER CON DISEÑO - ART. 2604", precio: 2000, imagen: "./shop/medias/QUARTER CON DISENO - ART. 2604.jpg" },
-    {  id: 10, articulo: "Medias", nombre:"QUARTER CON DISEÑO - ART. 3325", precio: 1650, imagen: "./shop/medias/QUARTER CON DISENO - ART. 3325.jpg" },
-    {  id: 11, articulo: "Medias", nombre:"QUARTER DEPORTIVA (PACKX3) - ART. 3326.3", precio: 1855, imagen: "./shop/medias/QUARTER DEPORTIVA (PACKX3) - ART. 3326.3.jpg" },
-    {  id: 12, articulo: "Medias", nombre:"QUARTER DEPORTIVA - ART. 2603", precio: 1190, imagen: "./shop/medias/QUARTER DEPORTIVA - ART. 2603.jpg" },
-    
-    {  id: 13, articulo: "Conjuntos", nombre:"CONJUNTO ANDRESSA 1218", precio: 1600, imagen: "./shop/corpinos/Conjunto Andressa E2003.jpeg" },
-    {  id: 14, articulo: "Conjuntos", nombre:"CONJUNTO ANDRESSA 1221", precio: 1600, imagen: "./shop/corpinos/Conjunto Andressa 1221 .jpg" },
-    {  id: 15, articulo: "Conjuntos", nombre:"CONJUNTO ANDRESSA GUIPIUR", precio: 1550, imagen: "./shop/corpinos/conjunto Andressa guipiur.jpg" },
-    {  id: 16, articulo: "Conjuntos", nombre:"CONJUNTO ANDRESSA E2003", precio: 1600, imagen: "./shop/corpinos/Conjunto Andressa E2003.jpeg" },
-    {  id: 17, articulo: "Conjuntos", nombre:"CONJUNTO ANDRESSA E2029", precio: 1855, imagen: "./shop/corpinos/Conjunto Andressa E2029.jpeg" },
-    {  id: 18, articulo: "Conjuntos", nombre:"CONJUNTO ANDRESSA L6894", precio: 1700, imagen: "./shop/corpinos/conjunto Andressa L6894.jpg" },
-    
-    {  id: 19, articulo: "Remeras", nombre:"CAMISETA FRISADA ULTRA-TERMICA - ART. 11795", precio: 1600, imagen: "./shop/remeras/CAMISETA FRISADA ULTRA-TERMICA - ART. 11795.jpg" },
-    {  id: 20, articulo: "Remeras", nombre:"CAMISETA PIJAMA - ART. 11797l", precio: 1600, imagen: "./shop/remeras/CAMISETA PIJAMA - ART. 11797l.jpg" },
-    {  id: 21, articulo: "Remeras", nombre:"CAMISETA TERMICA - ART. 11945", precio: 1550, imagen: "./shop/remeras/CAMISETA TERMICA - ART. 11945.jpg" },
-    {  id: 22, articulo: "Remeras", nombre:"CAMISETA THERMICAL SIN COSTURA - ART. 11927", precio: 1855, imagen: "./shop/remeras/CAMISETA THERMICAL SIN COSTURA - ART. 11927.jpg" },
-    {  id: 23, articulo: "Remeras", nombre:"MUSCULOSA MORLEY - ART. 11906", precio: 1700, imagen: "./shop/remeras/MUSCULOSA MORLEY - ART. 11906.jpg" },
-    {  id: 23, articulo: "Remeras", nombre:"REMERA PIJAMA JERSEY ALGODON - ART. 11984", precio: 1700, imagen: "./shop/remeras/REMERA PIJAMA JERSEY ALGODON - ART. 11907.jpg" },
-   
-]
-
+  fetch("./productos.json")
+  .then(respuesta => respuesta.json())
+  .then(productos => {
     const contenedorProductos = document.getElementById("contenedor-productos")
     const botonesCategorias = document.querySelectorAll(".boton-categoria")
     const tituloPrincipal = document.getElementById("titulo-principal")
@@ -219,7 +190,7 @@ cargarProductos(productos)
       function completoOVacio() {
         if (arrayCarrito.length == 0) {
           Swal.fire({
-            title: 'Tenes que meterle algo al carrito para poder comprar crack',
+            title: 'Tenes que meterle algo al carrito para poder comprar, crack',
             icon: 'error',
             
           })
@@ -244,13 +215,24 @@ cargarProductos(productos)
      actualizarTachosAgregar ()
 
      function quitarAlCarrito(e) {
-      let productoEliminar = productos.filter(producto => producto.cantidad <  1);
-      let posicionProducto = arrayCarrito.findIndex(producto => producto.id == e.target.id)
-    
-        arrayCarrito[posicionProducto] = {
-          id: arrayCarrito[posicionProducto].id, nombre: arrayCarrito[posicionProducto].nombre, precio: arrayCarrito[posicionProducto].precio, unidades: arrayCarrito[posicionProducto].unidades - 1, subtotal: arrayCarrito[posicionProducto].precio * (arrayCarrito[posicionProducto].unidades - 1)
-        }
       
+      let posicionProducto = arrayCarrito.findIndex(producto => producto.id == e.target.id)
+      arrayCarrito[posicionProducto].unidades == 1 ?
+         
+        arrayCarrito = arrayCarrito.filter(carrito => carrito.unidades >  1)
+        
+      :
+        arrayCarrito[posicionProducto] = {
+          id: arrayCarrito[posicionProducto].id,
+          nombre: arrayCarrito[posicionProducto].nombre,
+          precio: arrayCarrito[posicionProducto].precio,
+          unidades: arrayCarrito[posicionProducto].unidades - 1,
+          subtotal: arrayCarrito[posicionProducto].precio * (arrayCarrito[posicionProducto].unidades - 1)
+      }
+        
+
+      
+         
 
         let carritoJSON = JSON.stringify(arrayCarrito)
         localStorage.setItem("carrito", carritoJSON)
@@ -260,3 +242,5 @@ cargarProductos(productos)
 
        renderizarCarrito()
     }
+  })  
+  
